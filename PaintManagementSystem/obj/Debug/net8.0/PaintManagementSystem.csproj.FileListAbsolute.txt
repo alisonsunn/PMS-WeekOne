@@ -1,0 +1,15 @@
+/Users/alisonsun/Documents/DistinctionCoding/PMSWeekOne/PaintManagementSystem/bin/Debug/net8.0/PaintManagementSystem
+/Users/alisonsun/Documents/DistinctionCoding/PMSWeekOne/PaintManagementSystem/bin/Debug/net8.0/PaintManagementSystem.deps.json
+/Users/alisonsun/Documents/DistinctionCoding/PMSWeekOne/PaintManagementSystem/bin/Debug/net8.0/PaintManagementSystem.runtimeconfig.json
+/Users/alisonsun/Documents/DistinctionCoding/PMSWeekOne/PaintManagementSystem/bin/Debug/net8.0/PaintManagementSystem.dll
+/Users/alisonsun/Documents/DistinctionCoding/PMSWeekOne/PaintManagementSystem/bin/Debug/net8.0/PaintManagementSystem.pdb
+/Users/alisonsun/Documents/DistinctionCoding/PMSWeekOne/PaintManagementSystem/obj/Debug/net8.0/PaintManagementSystem.GeneratedMSBuildEditorConfig.editorconfig
+/Users/alisonsun/Documents/DistinctionCoding/PMSWeekOne/PaintManagementSystem/obj/Debug/net8.0/PaintManagementSystem.AssemblyInfoInputs.cache
+/Users/alisonsun/Documents/DistinctionCoding/PMSWeekOne/PaintManagementSystem/obj/Debug/net8.0/PaintManagementSystem.AssemblyInfo.cs
+/Users/alisonsun/Documents/DistinctionCoding/PMSWeekOne/PaintManagementSystem/obj/Debug/net8.0/PaintManagementSystem.csproj.CoreCompileInputs.cache
+/Users/alisonsun/Documents/DistinctionCoding/PMSWeekOne/PaintManagementSystem/obj/Debug/net8.0/PaintManagementSystem.sourcelink.json
+/Users/alisonsun/Documents/DistinctionCoding/PMSWeekOne/PaintManagementSystem/obj/Debug/net8.0/PaintManagementSystem.dll
+/Users/alisonsun/Documents/DistinctionCoding/PMSWeekOne/PaintManagementSystem/obj/Debug/net8.0/refint/PaintManagementSystem.dll
+/Users/alisonsun/Documents/DistinctionCoding/PMSWeekOne/PaintManagementSystem/obj/Debug/net8.0/PaintManagementSystem.pdb
+/Users/alisonsun/Documents/DistinctionCoding/PMSWeekOne/PaintManagementSystem/obj/Debug/net8.0/PaintManagementSystem.genruntimeconfig.cache
+/Users/alisonsun/Documents/DistinctionCoding/PMSWeekOne/PaintManagementSystem/obj/Debug/net8.0/ref/PaintManagementSystem.dll
