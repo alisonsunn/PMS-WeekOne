@@ -3,7 +3,7 @@ using PaintManagementSystem.Enums;
 namespace PaintManagementSystem.Models;
 
 public class PaintProduct {
-    private const int _DefaultDiscount = 5;
+    private const int DefaultDiscount = 5;
     private readonly decimal _taxRate;
     public string Name {get; private set;}
     public PaintType Type {get; private set;}
@@ -22,19 +22,20 @@ public class PaintProduct {
     public string DisplayInfo()
     {
         decimal finalPrice = GetFinalPrice();
-        return $"Name: {Name}, Type: {Type}, Price: {Price}, Specification: {Specification}, FinalPrice: {finalPrice}";
+        string specification = Specification.DisplaySpecification();
+        return $"Name: {Name}, Type: {Type}, Price: {Price}, {specification}, FinalPrice: {finalPrice}";
     }
 
     public int GetMaxDiscount(int rate, bool isOverridable) {
         if (isOverridable) {
-            return Math.Max(rate, _DefaultDiscount);
+            return Math.Max(rate, DefaultDiscount);
         }
-        return _DefaultDiscount;
+        return DefaultDiscount;
     }
 
     public decimal GetFinalPrice()
     {
-        decimal discountedPrice = Price - (Price * (_DefaultDiscount/100m));
+        decimal discountedPrice = Price - (Price * (DefaultDiscount/100m));
         decimal finalPrice = discountedPrice * (1 + _taxRate);
         return finalPrice;
     }   
