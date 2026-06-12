@@ -1,8 +1,9 @@
 using PaintManagementSystem.Enums;
+using PaintManagementSystem.Interfaces;
 
 namespace PaintManagementSystem.Models;
 
-public class PaintProduct {
+public class PaintProduct : IBuyable {
     private const int DefaultDiscount = 5;
     private readonly decimal _taxRate;
     public string Name {get; private set;}
