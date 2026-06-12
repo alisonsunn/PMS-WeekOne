@@ -12,7 +12,7 @@ PaintProduct paintProduct3 = new PaintProduct("Blue Paint", PaintType.BaseCoat, 
 
 // display all the Info for paintProducts
 Console.WriteLine(paintProduct1.DisplayInfo());
-Console.WriteLine(paintProduct2.DisplayInfo());
+Console.WriteLine(paintProduct2.DisplayInfo(10,true));
 Console.WriteLine(paintProduct3.DisplayInfo());
 
 // create an order
