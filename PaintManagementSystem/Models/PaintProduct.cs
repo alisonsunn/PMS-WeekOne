@@ -20,23 +20,35 @@ public class PaintProduct : IBuyable {
         _taxRate = 0.1m;
     }
 
-    public string DisplayInfo()
+    public string DisplayInfo() {
+        return DisplayInfo(DefaultDiscount, false);
+    }
+
+    public string DisplayInfo(int rate, bool isOverridable)
     {
-        decimal finalPrice = GetFinalPrice();
+        decimal finalPrice = GetFinalPrice(rate, isOverridable);
         string specification = Specification.DisplaySpecification();
         return $"Name: {Name}, Type: {Type}, Price: {Price}, {specification}, FinalPrice: {finalPrice}";
     }
 
     public int GetMaxDiscount(int rate, bool isOverridable) {
+        // compare rate with default discount
         if (isOverridable) {
             return Math.Max(rate, DefaultDiscount);
         }
         return DefaultDiscount;
     }
 
-    public decimal GetFinalPrice()
+    // GetFinalPrice - With default discount
+    public decimal GetFinalPrice() {
+        return GetFinalPrice(DefaultDiscount, false);
+    }
+
+    // GetFinalPrice - input rate discount
+    public decimal GetFinalPrice(int rate, bool isOverridable)
     {
-        decimal discountedPrice = Price - (Price * (DefaultDiscount/100m));
+        decimal discount = GetMaxDiscount(rate, isOverridable);
+        decimal discountedPrice = Price - (Price * (discount/100m));
         decimal finalPrice = discountedPrice * (1 + _taxRate);
         return finalPrice;
     }   
