@@ -6,9 +6,12 @@ PaintSpecification paintSpecification1 = new PaintSpecification("Pink", 2);
 PaintSpecification paintSpecification2 = new PaintSpecification("White", 4);
 PaintSpecification paintSpecification3 = new PaintSpecification("Blue", 8);
 
-PaintProduct paintProduct1 = new PaintProduct("Pink Paint", PaintType.Matte, paintSpecification1, 100m);
-PaintProduct paintProduct2 = new PaintProduct("White Paint", PaintType.Glossy, paintSpecification2, 80m);
-PaintProduct paintProduct3 = new PaintProduct("Blue Paint", PaintType.BaseCoat, paintSpecification3, 60m);
+Brand brand = new Brand("GoodPaint!");
+
+PaintProduct paintProduct1 = new PaintProduct("Pink Paint", PaintType.Matte, paintSpecification1, 100m, brand);
+PaintProduct paintProduct2 = new PaintProduct("White Paint", PaintType.Gloss, paintSpecification2, 80m, brand);
+PaintProduct paintProduct3 = new PaintProduct("Blue Paint", PaintType.BaseCoat, paintSpecification3, 60m,brand);
+
 
 // display all the Info for paintProducts
 Console.WriteLine(paintProduct1.DisplayInfo());

@@ -11,24 +11,29 @@ public class PaintProduct : IBuyable {
     public PaintSpecification Specification {get; private set;}
     public decimal Price {get; private set;}
 
-    public PaintProduct (string name, PaintType type, PaintSpecification specification, decimal price) 
+    public Brand PaintBrand {get; private set;}
+
+    public PaintProduct (string name, PaintType type, PaintSpecification specification, decimal price, Brand brand) 
     {
         Name = name;
         Type = type;
         Specification = specification;
         Price = price;
         _taxRate = 0.1m;
+        PaintBrand = brand;
     }
 
+    // Display Info for default discounted price product.
     public string DisplayInfo() {
         return DisplayInfo(DefaultDiscount, false);
     }
 
+    // Display Info for input discounted price product.
     public string DisplayInfo(int rate, bool isOverridable)
     {
         decimal finalPrice = GetFinalPrice(rate, isOverridable);
         string specification = Specification.DisplaySpecification();
-        return $"Name: {Name}, Type: {Type}, Price: {Price}, {specification}, FinalPrice: {finalPrice}";
+        return $"Name: {Name}, Type: {Type}, Price: {Price}, {specification}, FinalPrice: {finalPrice}, Brand: {PaintBrand.Name}";
     }
 
     public int GetMaxDiscount(int rate, bool isOverridable) {
