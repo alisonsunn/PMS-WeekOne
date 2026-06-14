@@ -23,3 +23,7 @@ Order order1 = new Order(paintProduct1, 6);
 
 // display the Info for order1
 Console.WriteLine(order1.DisplayOrder());
+
+// test OrderList Class
+OrderList orderList = new OrderList(paintProduct1, 3);
+Console.WriteLine(orderList.OrderLIstInfo());
