@@ -18,12 +18,19 @@ Console.WriteLine(paintProduct1.DisplayInfo());
 Console.WriteLine(paintProduct2.DisplayInfo(10,true));
 Console.WriteLine(paintProduct3.DisplayInfo());
 
+// test OrderList Class
+OrderList orderList = new OrderList(paintProduct1, 3);
+OrderList orderList2 = new OrderList(paintProduct2, 5);
+
+List<OrderList> orderLists = new List<OrderList>{};
+orderLists.Add(orderList);
+orderLists.Add(orderList2);
+
+
 // create an order
-Order order1 = new Order(paintProduct1, 6);
+Order order1 = new Order(orderLists);
 
 // display the Info for order1
 Console.WriteLine(order1.DisplayOrder());
 
-// test OrderList Class
-OrderList orderList = new OrderList(paintProduct1, 3);
-Console.WriteLine(orderList.OrderLIstInfo());
+

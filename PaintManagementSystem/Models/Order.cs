@@ -1,30 +1,40 @@
+using System.Reflection.Metadata.Ecma335;
+
 namespace PaintManagementSystem.Models;
 
 public class Order
 {
     private readonly DateTime _createdAt;
-    public PaintProduct Product {get; private set;}
+    public List<OrderList> OrderList {get;}
     public int Quantity {get; private set;}
     public decimal TotalPrice {get; private set;}
 
-    public Order(PaintProduct product, int quantity)
+    public Order(List<OrderList> orderList)
     {
-        Product = product;
-        Quantity = quantity;
-        TotalPrice = GetTotalPrice();
+        OrderList = orderList;
+        TotalPrice = GetTotalOrderPrice();
         _createdAt = DateTime.Now;
     }
 
     public String DisplayOrder()
     {
-        string paintInfo = Product.DisplayInfo();
-        return $"Order Details: PaintProduct: {paintInfo}, Quantity: {Quantity}, TotalPrice: {TotalPrice}, CreatedAt: {_createdAt}";
+        string orderInfo = "";
+        foreach (var order in OrderList)
+        {
+            orderInfo += order.OrderLIstInfo();
+        }
+        return orderInfo + TotalPrice + _createdAt;
     }
 
-    public decimal GetTotalPrice()
+    public decimal GetTotalOrderPrice()
     {
-        decimal productPrice = Product.GetFinalPrice();
-        TotalPrice = productPrice * Quantity;
-        return TotalPrice;
+        decimal totalPrice = 0;
+        foreach (var order in OrderList)
+        {
+            decimal productPrice = order.Product.GetFinalPrice();
+            int quantity = order.Quantity;
+            totalPrice += productPrice * quantity;
+        }
+        return totalPrice;
     }
 }
