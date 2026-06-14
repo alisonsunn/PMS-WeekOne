@@ -18,6 +18,8 @@ Console.WriteLine(paintProduct1.DisplayInfo());
 Console.WriteLine(paintProduct2.DisplayInfo(10,true));
 Console.WriteLine(paintProduct3.DisplayInfo());
 
+Console.WriteLine("===========");
+
 // test OrderList Class
 OrderList orderList = new OrderList(paintProduct1, 3);
 OrderList orderList2 = new OrderList(paintProduct2, 5);
@@ -30,7 +32,17 @@ orderLists.Add(orderList2);
 // create an order
 Order order1 = new Order(orderLists);
 
+
 // display the Info for order1
 Console.WriteLine(order1.DisplayOrder());
+
+Console.WriteLine("===========");
+// display all the paintProducts from PaintStore Class
+List<PaintProduct> paintProducts = new List<PaintProduct>();
+paintProducts.Add(paintProduct1);
+paintProducts.Add(paintProduct2);
+paintProducts.Add(paintProduct3);
+PaintStore paintStore = new PaintStore(paintProducts);
+Console.WriteLine(paintStore.GetPaintProductsInfo());
 
 
