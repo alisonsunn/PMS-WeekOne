@@ -4,8 +4,10 @@ using PaintManagementSystem.Interfaces;
 namespace PaintManagementSystem.Models;
 
 public class PaintProduct : IBuyable {
+
     private const int DefaultDiscount = 5;
     private readonly decimal _taxRate;
+    public int ProductId {get; private set;}
     public string Name {get; private set;}
     public PaintType Type {get; private set;}
     public PaintSpecification Specification {get; private set;}
@@ -13,8 +15,9 @@ public class PaintProduct : IBuyable {
 
     public Brand PaintBrand {get; private set;}
 
-    public PaintProduct (string name, PaintType type, PaintSpecification specification, decimal price, Brand brand) 
+    public PaintProduct (int productId, string name, PaintType type, PaintSpecification specification, decimal price, Brand brand) 
     {
+        ProductId = productId;
         Name = name;
         Type = type;
         Specification = specification;
