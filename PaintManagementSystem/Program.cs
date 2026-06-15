@@ -69,14 +69,21 @@ Console.WriteLine(order1.GetPaintsWithCertainPrices(50, 150));
 // test Payment class
 Console.WriteLine("===========");
 Payment payment1 = new Payment(PaymentStatus.Success, PaymentMethod.BankTransfer, order1);
+Payment payment2 = new Payment(PaymentStatus.Pending, PaymentMethod.Alipay, order2);
 Console.WriteLine(payment1.PaymentAmount);
 
-// test User class
+// test User class 
 Console.WriteLine("===========");
 List<Order> orders = new List<Order>();
 orders.Add(order1);
 orders.Add(order2);
 
-User user = new User(orders);
+List<Payment> payments = new List<Payment>();
+payments.Add(payment1);
+payments.Add(payment2);
+
+
+User user = new User(orders, payments);
 Console.WriteLine(user.GetLatestOrder().DisplayOrder());
 Console.WriteLine(user.GetMostExpensiveOrder().DisplayOrder());
+Console.WriteLine(user.GetLastestPaymemt().Status);
