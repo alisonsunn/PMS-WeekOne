@@ -59,3 +59,7 @@ Console.WriteLine(order1.GetEachPaintTotalPrice());
 Console.WriteLine("===========");
 Console.WriteLine(order1.GetPaintsWithCertainPrices(50, 150));
 
+// test Payment class
+Console.WriteLine("===========");
+Payment payment1 = new Payment(PaymentStatus.Success, PaymentMethod.BankTransfer, order1);
+Console.WriteLine(payment1.PaymentAmount);
