@@ -4,7 +4,7 @@ namespace PaintManagementSystem.Models;
 
 public class Order
 {
-    private readonly DateTime _createdAt;
+    public readonly DateTime _createdAt;
     public List<OrderList> OrderList {get;}
     public int Quantity {get; private set;}
     public decimal TotalPrice {get; private set;}

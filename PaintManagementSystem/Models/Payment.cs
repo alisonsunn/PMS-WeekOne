@@ -9,6 +9,7 @@ public class Payment
     public decimal PaymentAmount {get; private set;}
     public PaymentMethod Method {get; private set;}
     public Order Order {get;}
+    public User User {get;}
 
     public Payment(PaymentStatus paymentStatus, PaymentMethod paymentMethod, Order order)
     {
