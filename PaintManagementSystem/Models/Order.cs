@@ -4,7 +4,7 @@ namespace PaintManagementSystem.Models;
 
 public class Order
 {
-    public readonly DateTime _createdAt;
+    public readonly DateTime createdAt;
     public List<OrderList> OrderList {get;}
     public int Quantity {get; private set;}
     public decimal TotalPrice {get; private set;}
@@ -13,7 +13,7 @@ public class Order
     {
         OrderList = orderList;
         TotalPrice = GetTotalOrderPrice();
-        _createdAt = DateTime.Now;
+        createdAt = DateTime.Now;
     }
 
     public String DisplayOrder()
@@ -23,7 +23,7 @@ public class Order
         {
             orderInfo += order.OrderLIstInfo();
         }
-        return orderInfo + TotalPrice + _createdAt;
+        return orderInfo + TotalPrice + createdAt;
     }
 
     public decimal GetTotalOrderPrice()

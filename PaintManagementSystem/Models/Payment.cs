@@ -9,7 +9,7 @@ public class Payment
     public decimal PaymentAmount {get; private set;}
     public PaymentMethod Method {get; private set;}
     public Order Order {get;}
-    public User User {get;}
+    public readonly DateTime createdAt;
 
     public Payment(PaymentStatus paymentStatus, PaymentMethod paymentMethod, Order order)
     {
@@ -18,6 +18,7 @@ public class Payment
         Method = paymentMethod;
         Order = order;
         PaymentAmount = Order.TotalPrice;
+        createdAt = DateTime.Now;
     }
 }
 
