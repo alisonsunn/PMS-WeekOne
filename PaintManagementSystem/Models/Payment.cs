@@ -1,7 +1,8 @@
 namespace PaintManagementSystem.Models;
 using PaintManagementSystem.Enums;
+using PaintManagementSystem.Interfaces;
 
-public class Payment
+public class Payment : ITrackable
 {
     private static int _nextPaymentId = 1;
     public int PaymentId {get;}
@@ -9,7 +10,7 @@ public class Payment
     public decimal PaymentAmount {get; private set;}
     public PaymentMethod Method {get; private set;}
     public Order Order {get;}
-    public readonly DateTime createdAt;
+    public DateTime CreatedAt {get;}
 
     public Payment(PaymentStatus paymentStatus, PaymentMethod paymentMethod, Order order)
     {
@@ -18,7 +19,7 @@ public class Payment
         Method = paymentMethod;
         Order = order;
         PaymentAmount = Order.TotalPrice;
-        createdAt = DateTime.Now;
+        CreatedAt = DateTime.Now;
     }
 }
 
