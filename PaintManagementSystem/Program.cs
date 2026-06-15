@@ -8,9 +8,9 @@ PaintSpecification paintSpecification3 = new PaintSpecification("Blue", 8);
 
 Brand brand = new Brand("GoodPaint!");
 
-PaintProduct paintProduct1 = new PaintProduct("Pink Paint", PaintType.Matte, paintSpecification1, 100m, brand);
-PaintProduct paintProduct2 = new PaintProduct("White Paint", PaintType.Gloss, paintSpecification2, 80m, brand);
-PaintProduct paintProduct3 = new PaintProduct("Blue Paint", PaintType.BaseCoat, paintSpecification3, 60m,brand);
+PaintProduct paintProduct1 = new PaintProduct(1, "Pink Paint", PaintType.Matte, paintSpecification1, 100m, brand);
+PaintProduct paintProduct2 = new PaintProduct(2, "White Paint", PaintType.Gloss, paintSpecification2, 80m, brand);
+PaintProduct paintProduct3 = new PaintProduct(3, "Blue Paint", PaintType.BaseCoat, paintSpecification3, 60m,brand);
 
 
 // display all the Info for paintProducts
@@ -45,4 +45,17 @@ paintProducts.Add(paintProduct3);
 PaintStore paintStore = new PaintStore(paintProducts);
 Console.WriteLine(paintStore.GetPaintProductsInfo());
 
+Console.WriteLine("===========");
+// order1.RemoveProduct(1);
+// Console.WriteLine(order1.DisplayOrder());
+Console.WriteLine("===========");
+Console.WriteLine(order1.GetMostExpensivePaintProduct());
+
+// test GetEachPaintTotalPrice() method
+Console.WriteLine("===========");
+Console.WriteLine(order1.GetEachPaintTotalPrice());
+
+// test GetPaintsWithCertainPrices method
+Console.WriteLine("===========");
+Console.WriteLine(order1.GetPaintsWithCertainPrices(50, 150));
 
