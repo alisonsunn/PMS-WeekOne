@@ -1,3 +1,5 @@
+using PaintManagementSystem.Interfaces;
+
 namespace PaintManagementSystem.Models;
 
 public class User
@@ -14,14 +16,26 @@ public class User
         Payments = payments;
     }
 
-    // Get Latest Order
+    // GetLatest method by using ITrackable
+    public T GetLatest<T>(List<T> items) where T : ITrackable
+    {
+        if (items.Count != 0)
+        {
+            return items.OrderByDescending(item => item.CreatedAt).First();
+        }
+        throw new Exception("No information founded.");
+    }
+
+    // Get the Latest Order
     public Order GetLatestOrder()
     {
-        if (Orders.Count != 0)
-        {
-            return Orders.OrderByDescending(order => order.createdAt).First();
-        }
-        throw new Exception("This User currently doesn't have any order.");
+        return GetLatest(Orders);
+    }
+
+    // Get the lastest payment record
+    public Payment GetLastestPaymemt()
+    {
+        return GetLatest(Payments);
     }
 
     // Get the most expensive order
@@ -38,12 +52,6 @@ public class User
     public Payment GetLowestPayment()
     {
         return Payments.OrderByDescending(payment=>payment.PaymentAmount).Last();
-    }
-
-    // Get the lastest payment record
-    public Payment GetLastestPaymemt()
-    {
-        return Payments.OrderByDescending(payment=>payment.createdAt).First();
     }
 
     // Get the payment over 10

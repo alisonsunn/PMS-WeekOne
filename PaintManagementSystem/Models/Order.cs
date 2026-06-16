@@ -1,10 +1,11 @@
 using System.Reflection.Metadata.Ecma335;
+using PaintManagementSystem.Interfaces;
 
 namespace PaintManagementSystem.Models;
 
-public class Order
+public class Order : ITrackable
 {
-    public readonly DateTime createdAt;
+    public DateTime CreatedAt {get;}
     public List<OrderList> OrderList {get;}
     public int Quantity {get; private set;}
     public decimal TotalPrice {get; private set;}
@@ -13,7 +14,7 @@ public class Order
     {
         OrderList = orderList;
         TotalPrice = GetTotalOrderPrice();
-        createdAt = DateTime.Now;
+        CreatedAt = DateTime.Now;
     }
 
     public String DisplayOrder()
@@ -23,7 +24,7 @@ public class Order
         {
             orderInfo += order.OrderLIstInfo();
         }
-        return orderInfo + TotalPrice + createdAt;
+        return orderInfo + TotalPrice + CreatedAt;
     }
 
     public decimal GetTotalOrderPrice()
